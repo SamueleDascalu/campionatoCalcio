@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Main {
 
@@ -26,6 +27,8 @@ public class Main {
 				put("napoli",0);
 			}
 		};
+		
+		Map<String, Integer> classificaRiordinata = new TreeMap<String, Integer>();
 		
 		ArrayList<String> listaPartite = new ArrayList<String>();
 		ArrayList<String> listaPunteggi = new ArrayList<String>();
@@ -87,10 +90,11 @@ public class Main {
 		}
 		
 		System.out.println("Questa é la classifica del campionato:");
+		System.out.println();
 		
-		//ordinare la classifica in base ai punteggi interi
-		for(Map.Entry<String, Integer> entry:squadre.entrySet()) {
-			System.out.println(entry.getKey()+entry.getValue());
+		//sort values in descendent order
+		for(Map.Entry<String, Integer> valori:squadre.entrySet()) {
+			System.out.println(valori.getKey()+": "+valori.getValue());
 		}
 		
 		scanner.close();
